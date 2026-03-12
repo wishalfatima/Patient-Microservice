@@ -1,0 +1,3 @@
+com\example\PatientService\controller\PatientControllerTest.class
+com\example\PatientService\PatientServiceApplicationTests.class
+com\example\PatientService\integration\PatientControllerIntegrationTest.class
