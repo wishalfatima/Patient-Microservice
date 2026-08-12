@@ -1,82 +1,73 @@
 # Patient Microservice
 
+A Spring Boot microservice for managing patient records through a REST API, with MongoDB persistence, CRUD operations, testing, and Docker-based deployment.
+
 ## Project Overview
-This project is a **Patient Microservice** built using **Spring Boot** and **MongoDB**.  
-It provides RESTful endpoints to manage patient records with full CRUD functionality, allowing clients to add, retrieve, update, and delete patient information.
 
----
+This project demonstrates the development of a backend microservice using **Java and Spring Boot**.
 
-## Domain Model
-**Patient (Entity)** with the following properties:
-- First Name  
-- Last Name  
-- Date of Birth  
-- Contact Number  
-- Email Address  
-- Gender  
+The service provides RESTful operations for managing patient information and uses **MongoDB** as the persistence layer.
 
----
+The project follows a layered backend architecture with separate areas for:
+
+- REST controllers
+- Business/service logic
+- Domain models
+- Data repositories
+
+## Business Purpose
+
+The microservice provides a backend service for managing patient records.
+
+A patient record contains information such as:
+
+- First Name
+- Last Name
+- Date of Birth
+- Contact Number
+- Email Address
+- Gender
 
 ## Features
-- **CRUD Operations** for Patients via REST endpoints  
-- **Spring Boot Repository** for MongoDB integration  
-- **Service Layer** for business logic  
-- **RESTful Client** to interact with the microservice  
-- **Unit Tests** for controller and service layers using **JUnit** and **Mockito**  
-- **Dockerized** service and MongoDB using **Docker Compose**  
-- **GitLab CI/CD pipeline** with two stages:
-  - `build`: builds the Docker image  
-  - `test`: runs unit tests and endpoint tests  
 
----
+- Create patient records
+- Retrieve patient records
+- Update patient records
+- Delete patient records
+- REST API endpoints for patient management
+- MongoDB persistence
+- Service layer for business logic
+- Repository layer for database access
+- Unit testing using JUnit and Mockito
+- Docker support
+- Docker Compose configuration
 
-## Technology Stack
-- **Backend:** Java, Spring Boot  
-- **Database:** MongoDB  
-- **Testing:** JUnit, Mockito  
-- **Containerization:** Docker, Docker Compose  
-- **CI/CD:** GitLab CI  
+## REST API
 
----
+The service exposes REST endpoints for patient management.
 
-## Folder Structure 
-PatientMicroservice/
-├─ src/
-│ ├─ main/
-│ │ ├─ java/com/example/patientmicroservice/
-│ │ │ ├─ controller/
-│ │ │ ├─ service/
-│ │ │ ├─ domain/
-│ │ │ └─ repository/
-│ │ └─ resources/
-│ │ ├─ application.properties
-│ │ └─ templates/ (if needed)
-├─ test/
-│ └─ java/... # Unit and integration tests
-├─ Dockerfile
-├─ docker-compose.yml
-├─ .gitlab-ci.yml
-├─ pom.xml
-└─ README.md
+| Method | Endpoint | Purpose |
+|---|---|---|
+| GET | `/patients` | Retrieve patients |
+| POST | `/patients` | Create a patient |
+| PUT | `/patients/{id}` | Update a patient |
+| DELETE | `/patients/{id}` | Delete a patient |
 
-## Usage
+## Architecture
 
-Clone the repository:
-```bash
-git clone https://github.com/wishalfatima/Patient-Microservice.git
+The application follows a layered microservice structure:
 
-Build and run the service using Docker Compose:
-docker-compose up --build
-
-Access the REST API (default port 8080):
-GET /patients
-POST /patients
-PUT /patients/{id}
-DELETE /patients/{id}
-
-Run unit tests:
-mvn test
-
-GitLab CI/CD
-Build Stage: Builds the Docker image for the service
-Test Stage: Runs unit tests and endpoint tests
+```text
+Client
+   |
+   v
+REST Controller
+   |
+   v
+Service Layer
+   |
+   v
+Repository Layer
+   |
+   v
+MongoDB
