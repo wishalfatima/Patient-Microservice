@@ -161,29 +161,24 @@ This starts the application and its configured containerized services.
 ```text
 Patient-Microservice/
 │
-├── PatientService/
-│   ├── src/
-│   │   ├── main/
-│   │   │   ├── java/
-│   │   │   │   └── com/example/patientmicroservice/
-│   │   │   │       ├── controller/
-│   │   │   │       ├── service/
-│   │   │   │       ├── domain/
-│   │   │   │       └── repository/
-│   │   │   │
-│   │   │   └── resources/
-│   │   │       └── application.properties
-│   │   │
-│   │   └── test/
-│   │
-│   ├── Dockerfile
-│   ├── docker-compose.yml
-│   ├── mvnw
-│   ├── mvnw.cmd
-│   └── pom.xml
-│
 ├── .gitignore
-└── README.md
+├── README.md
+│
+└── PatientService/
+    ├── src/
+    │   ├── main/
+    │   └── test/
+    │       └── java/
+    │           └── com/example/PatientService/
+    │               ├── controller/
+    │               ├── integration/
+    │               └── PatientServiceApplicationTests.java
+    │
+    ├── Dockerfile
+    ├── docker-compose.yml
+    ├── mvnw
+    ├── mvnw.cmd
+    └── pom.xml
 ```
 
 ## What This Project Demonstrates
