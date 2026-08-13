@@ -1,7 +1,0 @@
-com\example\PatientService\client\PatientRestClient.class
-com\example\PatientService\controller\HomeController.class
-com\example\PatientService\model\Patient.class
-com\example\PatientService\repository\PatientRepository.class
-com\example\PatientService\controller\PatientController.class
-com\example\PatientService\PatientServiceApplication.class
-com\example\PatientService\service\PatientService.class
