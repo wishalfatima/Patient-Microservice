@@ -1,6 +1,6 @@
-Absolutely. **Copy everything below and paste it directly into your `README.md`**, replacing the entire existing README.
 
-````markdown
+
+
 # Patient Microservice
 
 A Java Spring Boot microservice for managing patient records through a REST API, with MongoDB persistence, CRUD operations, automated testing, and Docker support.
